@@ -1,0 +1,20 @@
+databases:
+  - name: streeteatz_be
+    databaseName: streeteatz_9p9m
+    user: new_streeteatz
+
+services:
+  - type: web
+    name: streeteatz_be
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn streeteatz_be.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: streeteatz_be
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
