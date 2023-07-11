@@ -16,3 +16,7 @@ class Vendor(models.Model):
   upvote = models.BooleanField(default = False)
   downvote = models.BooleanField(default = False)
   favorited = models.BooleanField(default = False)
+
+  def __str__(self):
+    return self.name
+  
