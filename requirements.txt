@@ -1,5 +1,4 @@
 django
 psycopg2
 djangorestframework
-dj-database-url
 gunicorn
