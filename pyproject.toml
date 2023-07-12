@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "streeteatz_be"}]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.11"
 django = "^4.2.3"
 psycopg2 = "^2.9.6"
 djangorestframework = "^3.14.0"
