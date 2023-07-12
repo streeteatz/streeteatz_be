@@ -1,1 +1,1 @@
-web: gunicorn streeteatz.wsgi
+web: gunicorn streeteatz_be.wsgi
