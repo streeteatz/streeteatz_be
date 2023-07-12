@@ -2,8 +2,8 @@ from django.db import models
 
 # Create your models here.
 class Vendor(models.Model):
-  name = models.CharField(max_length = 20)
-  phone_number = models.CharField(max_length = 11)
+  name = models.CharField(max_length = 200)
+  phone_number = models.CharField(max_length = 200)
   location = models.CharField(max_length = 200)
   address = models.CharField(max_length = 200)
   status = models.BooleanField(default = False)
@@ -18,6 +18,7 @@ class Vendor(models.Model):
   favorited = models.BooleanField(default = False)
   up_rating = models.IntegerField(default=0)
   down_rating = models.IntegerField(default=0)
+  distanceFromUser = models.IntegerField(default=0)
 
   def __str__(self):
     return self.name
