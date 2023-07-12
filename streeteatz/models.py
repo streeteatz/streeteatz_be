@@ -23,3 +23,11 @@ class Vendor(models.Model):
   def __str__(self):
     return self.name
   
+class Item(models.Model):
+  name = models.CharField(max_length = 200)
+  price = models.CharField(max_length = 200)
+  description = models.CharField(max_length = 200)
+  vendor = models.ForeignKey(Vendor, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return self.name
