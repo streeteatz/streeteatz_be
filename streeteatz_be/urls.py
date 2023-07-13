@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from streeteatz.views import vendor_list
 from streeteatz.views import item_list
+from streeteatz.views import vendor_detail
 # from Vendor import views
 
 
@@ -25,4 +26,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('vendors/', vendor_list),
     path('items/', item_list),
+    path('vendors/<int:vendor_id>/', vendor_detail),
     ]
