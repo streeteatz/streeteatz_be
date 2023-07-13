@@ -12,7 +12,7 @@ class Vendor(models.Model):
   tags = models.CharField(max_length = 200)
   website = models.CharField(max_length = 200)
   img = models.CharField(max_length = 200)
-  wait_time = models.IntegerField()
+  wait_time = models.IntegerField(default = 0)
   upvote = models.BooleanField(default = False)
   downvote = models.BooleanField(default = False)
   favorited = models.BooleanField(default = False)
