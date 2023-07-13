@@ -115,6 +115,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000/vendor",
     "http://localhost:3000/vendor-view",
     "http://localhost:3000/vendor/:id",
+    "https://streeteatz-be-b15261620498.herokuapp.com/",
 ]
 
 CORS_ALLOW_METHODS = (
