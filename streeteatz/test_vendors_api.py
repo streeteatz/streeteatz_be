@@ -44,11 +44,6 @@ class VendorModelTest(TestCase):
         self.assertEqual(vendor.down_rating, 0)
         self.assertEqual(vendor.distanceFromUser, 0)
 
-
-    # def test_model_validation(self):
-    #     with self.assertRaises(ValidationError):
-    #         Vendor.objects.create(name='')
-
     def test_model_query(self):
         vendor = Vendor.objects.create(name='Test Vendor')
         self.assertEqual(Vendor.objects.filter(name='Test Vendor').count(), 1)
@@ -77,10 +72,6 @@ class ItemModelTest(TestCase):
         self.assertEqual(item.name, 'Test Item')
         self.assertEqual(item.price, '10')
         self.assertEqual(item.description, 'This is a test item.')
-
-    # def test_model_validation(self):
-    #     with self.assertRaises(ValidationError):
-    #         Item.objects.create(name='', price='', description='')
 
     def test_model_query(self):
         vendor = Vendor.objects.create(name= "Ba-Nom-a-nom",
