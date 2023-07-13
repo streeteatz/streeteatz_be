@@ -14,4 +14,9 @@ def item_list(request):
   items = Item.objects.all()
   serialized_items = ItemSerializer(items, many = True)
   return JsonResponse({'data': {'attributes': serialized_items.data}})
+
+def vendor_detail(request, vendor_id):
+  vendor = Vendor.objects.get(id = vendor_id)
+  serialized_vendor = VendorSerializer(vendor)
+  return JsonResponse({'data': {'attributes': serialized_vendor.data}})
 # Create your views here.
