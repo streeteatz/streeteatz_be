@@ -85,3 +85,112 @@ python3 manage.py migrate
     </code>
   </pre>
 </div>
+
+- Response
+
+<div style="overflow: auto; height: 200px;">
+  <pre>
+    <code>
+
+    All Vendors
+    https://streeteatz-be-b15261620498.herokuapp.com/vendors/
+
+    {
+      "data": {
+        "attributes": [
+          {
+          "id": 7,
+          "name": "Mac and Noodles",
+          "phone_number": "303-204-8782",
+          "location": "73.98234, 40.92487",
+          "address": "500 E 17th Ave Denver, CO",
+          "status": false,
+          "hours": "11:00-3:00pm, 5:00-9:00pm",
+          "description": "This MacNCheese is to die for!",
+          "tags": "#macaroni #cheese #noodles #macncheese",
+          "website": "www.macandnoodles.com",
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCbkk2SnZiVNK_HNPiPZX9KTlp2tsTNQbWQmxEXiYJzLxlu1MZuLpeO5Iorsor_gV2fSs&usqp=CAU",
+          "wait_time": 10,
+          "upvote": false,
+          "downvote": false,
+          "favorited": false,
+          "up_rating": 666,
+          "down_rating": 12,
+          "distanceFromUser": 0
+          },
+
+          {
+          "id": 10,
+          "name": "Deja Roux Cajun & Soul",
+          "phone_number": "303-883-3703",
+          "location": "70.9837, 38.92847",
+          "address": "1911 Sheridan Blvd Edgewater, Co 80214",
+          "status": false,
+          "hours": "11:00-3:00pm, 5:00-9:00pm",
+          "description": "Looking for some delicious soul food? This is the place!",
+          "tags": "#cajun #soulfood #delicious",
+          "website": "www.dejaroux.com",
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfFwFwQQ-zf9O3IFYL4yr6LFoYLk2Cs3tIdQ&usqp=CAU",
+          "wait_time": 20,
+          "upvote": false,
+          "downvote": false,
+          "favorited": false,
+          "up_rating": 0,
+          "down_rating": 0
+          },...
+        ]
+      }
+    }
+
+All Vendors' Items
+https://streeteatz-be-b15261620498.herokuapp.com/items/
+
+{
+  "data": {
+    "attributes": [
+      {
+      "id": 1,
+      "name": "Classic Banana",
+      "price": "6.00",
+      "description": "100% banana, frozen then whipped to perfection! Add your favorite toppings (separate)",
+      "vendor": 1
+      },
+      {
+      "id": 2,
+      "name": "Mixed Berry Banana",
+      "price": "6.00",
+      "description": "Banana + strawberry + blackberry frozen then whipped to perfection! Add your favorite toppings (separate)",
+      "vendor": 1
+      },...
+    ]
+  }
+}
+
+Vendor Details
+https://streeteatz-be-b15261620498.herokuapp.com/vendors/1/
+
+
+{
+  "data": {
+    "attributes": {
+      "id": 1,
+      "name": "Ba-Nom-a-nom",
+      "phone_number": "970-682-4666",
+      "location": "72.37946, -37.87633",
+      "address": "2900 Market St Denver, CO 80205",
+      "status": false,
+      "hours": "5:00-9:00pm",
+      "description": "Best desserts you have ever had, and they happen to be vegan!",
+      "tags": "#desserts #vegan #healthy #fruit",
+      "website": "www.banomanom.com",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3hJWqZUQ1y5-opPj2noXiCtn14Gpz4dSOz5uKKAD2UvTVeWxtld49cOhCwj9O4Mcg0-I&usqp=CAU",
+      "wait_time": 20,
+      "upvote": false,
+      "downvote": false,
+      "favorited": false,
+      "up_rating": 88,
+      "down_rating": 6,
+      "distanceFromUser": 0
+    }
+  }
+}
