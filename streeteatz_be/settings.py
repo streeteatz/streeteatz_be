@@ -113,13 +113,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:3000/vendor",
-    "http://localhost:3000/vendor-view",
-    "http://localhost:3000/vendor/:id",
-    "http://127.0.0.1:8000/",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",
+#     "http://localhost:3000/vendor",
+#     "http://localhost:3000/vendor-view",
+#     "http://localhost:3000/vendor/:id",
+#     "http://127.0.0.1:8000/",
+# ]
 
 CORS_ALLOW_METHODS = (
     "DELETE",
