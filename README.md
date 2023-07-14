@@ -194,3 +194,15 @@ https://streeteatz-be-b15261620498.herokuapp.com/vendors/1/
     }
   }
 }
+    </code>
+  </pre>
+</div>
+
+## Schema
+
+![](streeteatz/images/schema.png)
+
+## Authors
+* Isaac Thill [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) ](https://github.com/ithill22) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) ](www.linkedin.com/in/isaac-thill)
+* Reilly Miller [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) ](https://github.com/rmiller220) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/reilly-miller-6b6131266/)
+* Angel Byun [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) ](https://github.com/angelbyun) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/angel-byun/)
