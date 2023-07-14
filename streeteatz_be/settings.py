@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-56t)5y)hi=#ff#xumi9^ucv7m=mk8td)xfj*3wff+5_1mjcwb=')
+
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
@@ -85,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'streeteatz',
         'USER': 'new_streeteatz',
-        'PASSWORD': 'password',
+        'PASSWORD': str(os.getenv('DB-PASSWORD')),
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -110,13 +113,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:3000/vendor",
-    "http://localhost:3000/vendor-view",
-    "http://localhost:3000/vendor/:id",
-    "http://127.0.0.1:8000/",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",
+#     "http://localhost:3000/vendor",
+#     "http://localhost:3000/vendor-view",
+#     "http://localhost:3000/vendor/:id",
+#     "http://127.0.0.1:8000/",
+# ]
 
 CORS_ALLOW_METHODS = (
     "DELETE",
