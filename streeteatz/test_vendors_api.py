@@ -1,9 +1,10 @@
 import pytest
-from django.test import TestCase
-from .views import vendor_list, item_list
+import json
+from django.test import TestCase, Client
+from django.urls import reverse
+from .views import vendor_list, item_list, vendor_detail
 from .models import Vendor, Item
 from .serializers import VendorSerializer, ItemSerializer
-from django.urls import reverse
 
 def test_pytest_working():
     assert True == True
@@ -166,32 +167,56 @@ class ItemSerializerTest(TestCase):
         assert data['description'] == item.description
         assert data['vendor'] == item.vendor.id
 
-# class VendorListViewTest(TestCase):
+class VendorListViewTest(TestCase):
 
-#     def test_vendor_list(self):
-#         vendor_1 = Vendor.objects.create(name= 'Vendor 1')
-#         vendor_2 = Vendor.objects.create(name= 'Vendor 2')
-#         serialized_vendors = VendorSerializer(Vendor.objects.all(), many=True)
-#         response = vendor_list(self.client)
-#         # self.assertEqual(response.status_code, 200)
-#         self.assertEqual(response, {'data': {'attributes': serialized_vendors.data}})
+    def test_vendor_list(self):
+        vendor_1 = Vendor.objects.create(name= 'Vendor 1')
+        vendor_2 = Vendor.objects.create(name= 'Vendor 2')
+        serialized_vendors = VendorSerializer(Vendor.objects.all(), many=True)
+        response = vendor_list(self.client)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(json.loads(response.content), {'data': {'attributes': serialized_vendors.data}})
 
-# class ItemListViewTest(TestCase):
 
-#     def test_item_list(self):
-#         item_1 = Item.objects.create(name='Item 1', price=10)
-#         item_2 = Item.objects.create(name='Item 2', price=20)
-#         serialized_items = ItemSerializer(Item.objects.all(), many=True)
-#         response = item_list(self.client)
-#         self.assertEqual(response.status_code, 200)
-#         self.assertEqual(response.data['data']['attributes'], serialized_items.data)
+class ItemListViewTest(TestCase):
 
-# class UrlsTest(TestCase):
+    def test_item_list(self):
+        vendor = Vendor.objects.create(name= "Vendor 1")
+        item_1 = Item.objects.create(name='Item 1', price=10, vendor=vendor)
+        item_2 = Item.objects.create(name='Item 2', price=20, vendor=vendor)
+        serialized_items = ItemSerializer(Item.objects.all(), many=True)
+        response = item_list(self.client)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(json.loads(response.content), {'data': {'attributes': serialized_items.data}})
 
-#     def test_vendor_list_url(self):
-#         url = reverse('vendor_list')
-#         self.assertEqual(url, '/vendors/')
+class VendorDetailViewTest(TestCase):
 
-#     def test_item_list_url(self):
-#         url = reverse('item_list')
-#         self.assertEqual(url, '/items/')
+    def test_vendor_detail(self):
+        vendor = Vendor.objects.create(name='Vendor 1')
+        serialized_vendor = VendorSerializer(vendor)
+        response = vendor_detail(self.client, vendor_id=vendor.id)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(json.loads(response.content), {'data': {'attributes': serialized_vendor.data}})
+
+class UrlsTest(TestCase):
+
+    def test_vendor_list_url(client):
+        client = Client()
+        url = reverse('vendors')
+        response = client.get(url)
+        assert response.status_code == 200
+
+    def test_item_list_url(client):
+        client = Client()
+        url = reverse('items')
+        response = client.get(url)
+        assert response.status_code == 200
+
+    def test_vendor_detail_url(client):
+        vendor = Vendor.objects.create(name="Vendor 1")
+        vendor.save()
+        vendor_id = vendor.id
+        client = Client()
+        url = reverse('vendor_detail', args=[vendor_id])
+        response = client.get(url)
+        assert response.status_code == 200
