@@ -119,7 +119,9 @@ AUTH_PASSWORD_VALIDATORS = [
 #     "http://localhost:3000/vendor-view",
 #     "http://localhost:3000/vendor/:id",
 #     "http://127.0.0.1:8000/",
+#     "https://streateatz-fe.vercel.app/",
 # ]
+
 
 CORS_ALLOW_METHODS = (
     "DELETE",
