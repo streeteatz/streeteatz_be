@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = str(os.getenv('SECRET_KEY'))
+SECRET_KEY = str(os.getenv('SECRET_KEY',  'SECRET'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
@@ -122,6 +122,8 @@ AUTH_PASSWORD_VALIDATORS = [
 #     "https://streateatz-fe.vercel.app/",
 # ]
 
+MYTUPLE = ('tuple', 'double')
+Var1, Var2 = MYTUPLE
 
 CORS_ALLOW_METHODS = (
     "DELETE",
