@@ -9,6 +9,7 @@ class Vendor(models.Model):
   status = models.BooleanField(default = False)
   hours = models.CharField(max_length = 200)
   description = models.CharField(max_length = 200)
+  # tags = models.ManyToManyField('Tag')
   tags = models.CharField(max_length = 200)
   website = models.CharField(max_length = 200)
   img = models.CharField(max_length = 200)
@@ -23,6 +24,9 @@ class Vendor(models.Model):
   def __str__(self):
     return self.name
   
+# class Tag(models.Model):
+#   name = models.CharField(max_length = 50)
+
 class Item(models.Model):
   name = models.CharField(max_length = 200)
   price = models.CharField(max_length = 200)
