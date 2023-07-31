@@ -1,5 +1,6 @@
 # from django.shortcuts import render
 from django.http import JsonResponse
+from django.rest_framework import Response
 from .models import Vendor
 from .models import Item
 from .serializers import VendorSerializer
@@ -9,6 +10,7 @@ def vendor_list(request):
   vendors = Vendor.objects.all()
   serialized_vendors = VendorSerializer(vendors, many = True)
   return JsonResponse({'data': {'attributes': serialized_vendors.data}})
+  # return Response(serialized_vendors.data)
 
 def item_list(request):
   items = Item.objects.all()
