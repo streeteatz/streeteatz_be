@@ -8,7 +8,8 @@ from .serializers import VendorSerializer, ItemSerializer
 
 def test_pytest_working():
     assert True == True
-
+    
+# class TestVendorModel: <-- this is a class for pytest
 class VendorModelTest(TestCase):
 
     def test_model_creation(self):

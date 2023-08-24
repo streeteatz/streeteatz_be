@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = str(os.getenv('SECRET_KEY'))
+SECRET_KEY = str(os.getenv('SECRET_KEY',  'SECRET'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
@@ -113,15 +113,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",
-#     "http://localhost:3000/vendor",
-#     "http://localhost:3000/vendor-view",
-#     "http://localhost:3000/vendor/:id",
-#     "http://127.0.0.1:8000/",
-#     "https://streateatz-fe.vercel.app/",
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:3000/vendor",
+    "http://localhost:3000/vendor-view",
+    "http://localhost:3000/vendor/:id",
+    "http://127.0.0.1:8000/",
+    "https://streateatz-fe.vercel.app/",
+    "https://streeteatz-jizp.onrender.com/",
+]
 
+MYTUPLE = ('tuple', 'double')
+Var1, Var2 = MYTUPLE
 
 CORS_ALLOW_METHODS = (
     "DELETE",
